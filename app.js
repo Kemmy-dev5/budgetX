@@ -1,3 +1,4 @@
+// ...existing code...
 const form = document.getElementById('transaction-form');
 const dateInput = document.getElementById('date');
 const revenuInput = document.getElementById('revenu');
@@ -5,8 +6,7 @@ const depenseInput = document.getElementById('depense');
 const soldeAffiche = document.getElementById('solde');
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-
-// ...existing code...
+let historique = JSON.parse(localStorage.getItem("historique")) || []; // <-- historique en localStorage
 
 const ctx = document.getElementById('budgetGraphique').getContext("2d");
 let budgetGraphique = new Chart(ctx, {
@@ -71,9 +71,10 @@ function updateChart() {
 
     soldeAffiche.textContent = solde;
     localStorage.setItem("transactions", JSON.stringify(transactions));
-}
 
-// ...existing code...
+    // ne pas appeler updateHistorique() ici pour éviter doublons:
+    // updateHistorique();
+}
 // ============================
 // Ajout d'une transaction
 // ============================
@@ -85,6 +86,7 @@ form.addEventListener("submit", (e) => {
 
     if (!date || (revenu === 0 && depense === 0)) return;
 
+    // on ajoute les transactions séparées pour le graphique
     if (revenu > 0) {
         transactions.push({ date, montant: revenu, type: "revenu" });
     }
@@ -92,9 +94,32 @@ form.addEventListener("submit", (e) => {
         transactions.push({ date, montant: depense, type: "depense" });
     }
 
+    // sauvegarde une seule entrée d'historique par soumission
+    historique.push({ date, revenu, depense });
+    localStorage.setItem("historique", JSON.stringify(historique));
+
     updateChart();
+    updateHistorique(); // met à jour l'ul à partir du tableau historique
     form.reset();
 });
 
+
+// ============================
+// Historique des transactions
+// ============================
+const historiqueList = document.getElementById('historique-list');
+function updateHistorique() {
+    // vide la liste et la reconstruit depuis le tableau `historique`
+    historiqueList.innerHTML = '';
+    historique.forEach(entry => {
+        const li = document.createElement('li');
+        const r = entry.revenu || 0;
+        const d = entry.depense || 0;
+        li.textContent = `Le ${entry.date} : revenu ${r} CDF, dépense ${d} CDF.`;
+        historiqueList.appendChild(li);
+    });
+};
+
 // Mise à jour au chargement
 updateChart();
+updateHistorique();
