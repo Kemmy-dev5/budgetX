@@ -1,11 +1,11 @@
+
 // Element Chart
 const form = document.getElementById('transaction-form');
 const dateInput = document.getElementById('date');
 const revenuInput = document.getElementById('revenu');
 const depenseInput = document.getElementById('depense');
 const soldeAffiche = document.getElementById('solde');
-// Formulaire home
-const startBtn = document.getElementById('start-btn');
+
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 let historique = JSON.parse(localStorage.getItem("historique")) || []; // <-- historique en localStorage
@@ -127,6 +127,10 @@ updateChart();
 updateHistorique();
 
 
+const nom = sessionStorage.getItem("nomUser");
+const email = sessionStorage.getItem("emailUser");
 
+document.getElementById("nameID").textContent = "Nom : " +nom;
+document.getElementById("emailID").textContent = "Email : " +email;
 
 

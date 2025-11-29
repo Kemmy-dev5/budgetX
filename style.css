@@ -17,6 +17,16 @@
   overflow-x: hidden;
   padding: 3.5rem;
 }
+.identifiant{
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.identifiant p{
+  font-weight: 400;
+  margin-left: 2rem;
+}
 
 
 .container-menu {
@@ -179,11 +189,14 @@ form input:focus{
   padding: 20px 20px;
   border-radius: 10px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-  margin-top: 50%;
+  margin-top: 1rem;
 
 }
 .container-menu .title{
   margin: 0.5rem 0;
+}
+form input{
+  width: 100%;
 }
 
 
@@ -216,13 +229,13 @@ form input:focus{
   border-radius: 20px;
 }
 .cont-home h1{
-  font-size: 25px;
+  font-size: 30px;
 }
 .cont-home form{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 200px;
+  max-width: 350px;
 }
 .cont-home .btn{
   background: #2196F3;
@@ -234,7 +247,7 @@ form input:focus{
   transition: .2s ease-in-out;
    width: 200px;
    padding: 10px;
-   margin-bottom: 15px;
+   margin: 1px auto;
 }
 .cont-home .btn:hover{
   background-color: #1976D2;
@@ -264,7 +277,7 @@ form input:focus{
 
 @media(max-width: 500px){
       .container-menu {
-  max-width: 300px;
+  max-width: 350px;
   margin-bottom: 2px;
   background-color: #fff;
   padding: 20px 20px;
