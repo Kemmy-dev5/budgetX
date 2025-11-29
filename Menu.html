@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+  <div class="container-menu">
+      <h1 class="title">Mon budget 💲</h1>
+  
+      <!-- Formulaire -->
+      <form id="transaction-form">
+          <input type="date" id="date" required>
+          <input type="number" id="revenu" placeholder="Revenu (CDF)">
+          <input type="number" id="depense" placeholder="Dépense (CDF)">
+          <button type="submit" id="btn" class="btn">Ajouter</button>
+      </form>
+  
+      <!-- Solde total -->
+      <div id="solde-box">
+          Solde actuel : <span id="solde">0</span> CDF
+      </div>
+
+
+
+      
+      <!-- Graphique -->
+      <canvas id="budgetGraphique"></canvas>
+    </div>
+    
+    <!-- Historique des transactions -->
+
+    <div class="historique">
+        <h2>Historique des transactions</h2>
+        <ul id="historique-list"></ul>
+    </div>
+
+  
+
+    <script src="app.js"></script>
+
+</body>
+</html>

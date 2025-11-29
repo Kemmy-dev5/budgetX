@@ -1,9 +1,11 @@
-// ...existing code...
+// Element Chart
 const form = document.getElementById('transaction-form');
 const dateInput = document.getElementById('date');
 const revenuInput = document.getElementById('revenu');
 const depenseInput = document.getElementById('depense');
 const soldeAffiche = document.getElementById('solde');
+// Formulaire home
+const startBtn = document.getElementById('start-btn');
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 let historique = JSON.parse(localStorage.getItem("historique")) || []; // <-- historique en localStorage
@@ -123,3 +125,8 @@ function updateHistorique() {
 // Mise à jour au chargement
 updateChart();
 updateHistorique();
+
+
+
+
+

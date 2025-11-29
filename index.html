@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  
-  <div class="container">
-      <h1>Mon budget 💲</h1>
-  
-      <!-- Formulaire -->
-      <form id="transaction-form">
-          <input type="date" id="date" required>
-          <input type="number" id="revenu" placeholder="Revenu (CDF)">
-          <input type="number" id="depense" placeholder="Dépense (CDF)">
-          <button type="submit" id="btn">Ajouter</button>
-      </form>
-  
-      <!-- Solde total -->
-      <div id="solde-box">
-          Solde actuel : <span id="solde">0</span> CDF
-      </div>
+  <div class="container cont-home">
+    <h1 class="home-title">Up budget</h1>
+    <h1 class="icon">👋</h1>
+      <h1>Identifiez-vous</h1>
+    <form onsubmit="return validation()">
+      <input type="text" name="nom" id="nom" placeholder="Identifiez votre nom" required>
+      <input type="email" name="email" id="email" placeholder="Identifiez votre email" required>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
 
+  <script>
+  function validation() {
+    const nom = document.getElementById('nom').value.trim();
+    const email = document.getElementById('email').value.trim();
 
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailValide = regexEmail.test(email);
 
-      
-      <!-- Graphique -->
-      <canvas id="budgetGraphique"></canvas>
-    </div>
-    
-    <!-- Historique des transactions -->
+    if (nom.length < 5){
+        alert("Le champ nom est vide ou contient moins de 5 caractère");
+        return false;
+    }
 
-    <div class="historique">
-        <h2>Historique des transactions</h2>
-        <ul id="historique-list"></ul>
-    </div>
-    <script src="app.js"></script>
-
+    if(!emailValide){
+        alert("le champ email n'est pas respecter");
+        return false;
+    }
+    window.location.href = "Menu.html"
+    return false;
+    }
+</script>
 </body>
 </html>
