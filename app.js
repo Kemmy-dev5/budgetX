@@ -6,7 +6,6 @@ const revenuInput = document.getElementById('revenu');
 const depenseInput = document.getElementById('depense');
 const soldeAffiche = document.getElementById('solde');
 
-
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 let historique = JSON.parse(localStorage.getItem("historique")) || []; // <-- historique en localStorage
 
@@ -128,9 +127,7 @@ updateHistorique();
 
 
 const nom = sessionStorage.getItem("nomUser");
-const email = sessionStorage.getItem("emailUser");
+const nameID =document.getElementById("nameID").textContent = nom + "👋🏼";
 
-document.getElementById("nameID").textContent = "Nom : " +nom;
-document.getElementById("emailID").textContent = "Email : " +email;
 
 

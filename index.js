@@ -1,5 +1,5 @@
   function validation() {
-    const nom = document.getElementById('nom').value.trim();
+    let nom = document.getElementById('nom').value.trim();
     const email = document.getElementById('email').value.trim();
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -15,7 +15,6 @@
         return false;
     }
     sessionStorage.setItem("nomUser", nom);
-    sessionStorage.setItem("emailUser", email);
     window.location.href = "Menu.html"
     return false;
     }
