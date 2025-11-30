@@ -220,11 +220,11 @@ form input{
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  max-width: 10px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  max-width: 300px;
+  position: static;
+  bottom: auto;
+  left: auto;
+  /* transform: translate(-50%,-50%); */
 }
 
 
@@ -323,7 +323,7 @@ form {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  max-width: 250px;
+  max-width: 330px;
   margin: 0;
 }
 }
