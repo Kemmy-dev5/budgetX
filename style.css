@@ -221,6 +221,10 @@ form input{
   display: flex;
   flex-direction: column;
   max-width: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 
