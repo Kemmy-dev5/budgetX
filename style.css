@@ -336,7 +336,7 @@ form input{
 .alert.show{
   display: flex;
   opacity: 1;
-  transform: translateY(0.2rem);
+  transform: translateY(1rem);
 }
 
 .alert .alerteMot,
