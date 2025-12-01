@@ -35,6 +35,29 @@
   top: 2px;
   right: 10px;
 }
+.alert{
+  display: flex;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 15px;
+  opacity: 1;
+  transition: all .4s ease;
+  font-weight: bold;
+  backdrop-filter: blur(20px);
+  transform: translateY(-7rem);
+}
+.alert.show{
+  display: flex;
+  opacity: 1;
+  transform: translateY(0.2rem);
+}
+
+.alert .alerteMot,
+ .alert span{
+  font-size: 20px;
+}
 
 .container-menu {
   max-width: 800px;
@@ -44,7 +67,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-  transform: translateX(6rem);
+  transform: translateX(10rem);
 
 }
 .container-menu .title{
@@ -161,6 +184,7 @@ form input:focus{
   outline: none;
   border: 2px solid #ccc;
   border-radius: 8px;
+  cursor: pointer;
 }
 .cont-home form input:focus{
   border: 2px solid #2196F3;
@@ -291,6 +315,32 @@ form input{
   transform: translateX(-1000px);
   animation: salut .2s ease-in-out infinite alternate;
 }
+}
+
+.alert{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 15px;
+  opacity: 1;
+  transition: all .4s ease;
+  font-weight: bold;
+  backdrop-filter: blur(20px);
+  transform: translateY(-10rem);
+  margin: 0 0.5rem;
+}
+.alert.show{
+  display: flex;
+  opacity: 1;
+  transform: translateY(0.2rem);
+}
+
+.alert .alerteMot,
+ .alert span{
+  font-size: 18px;
 }
 
 @media(max-width: 500px){

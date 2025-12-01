@@ -7,13 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container cont-home">f
+
+  <div id="alert" class="alert">
+    <span>⚠️</span>
+    <h1 id="alerteMot" class="alerteMot"></h1>
+  </div>
+  <div class="container cont-home">
     <h1 class="home-title">Up budget</h1>
     <h1 class="icon">👋</h1>
       <h1>Identifiez-vous</h1>
     <form onsubmit="return validation()">
-      <input type="text" name="nom" id="nom" placeholder="Identifiez votre nom" required>
-      <input type="email" name="email" id="email" placeholder="Identifiez votre email" required>
+      <input type="text" name="nom" id="nom" placeholder="Identifiez votre nom">
+      <input type="email" name="email" id="email" placeholder="Identifiez votre email">
       <button type="submit" class="btn">Login</button>
     </form>
   </div>
